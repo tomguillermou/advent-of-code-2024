@@ -35,7 +35,6 @@
     ],
     "new-cap": ["error", { "newIsCap": true, "capIsNew": false }],
     "no-array-constructor": "error",
-    "no-console": "error",
     "no-continue": "error",
     "no-else-return": "error",
     "no-empty-function": ["error", { "allow": ["constructors"] }],
@@ -69,7 +68,6 @@
     "prefer-object-spread": "error",
     "require-await": "error",
     "spaced-comment": "error",
-    "radix": "error",
     "no-global-assign": "error",
     "no-shadow-restricted-names": "error",
 
