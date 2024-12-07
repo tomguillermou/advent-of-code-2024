@@ -1,7 +1,7 @@
-import { parseInput } from './input';
+import { loadInput } from '../utils/load-input';
 
 function main(): void {
-  const memory = parseInput();
+  const memory = loadInput(3);
 
   console.log(parseMemory(memory));
 }

@@ -1,11 +1,7 @@
-import fs from 'fs';
-import path from 'path';
+import { loadInput } from '../utils/load-input';
 
 export function parseInput(): number[][] {
-  const filepath = path.join(__dirname, 'input.txt');
-  const fileContent = fs.readFileSync(filepath, 'utf-8');
-
-  return fileContent
+  return loadInput(2)
     .split('\n')
     .map((row) => row.split(' ').map((value) => Number.parseInt(value)));
 }
