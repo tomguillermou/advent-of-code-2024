@@ -7,7 +7,7 @@ function main(): void {
   let safeReportsCount = 0;
 
   for (const report of reports) {
-    if (isSafeReport(report)) {
+    if (canMakeReportSafe(report)) {
       safeReportsCount += 1;
     }
   }
@@ -50,6 +50,21 @@ export function isSafeReport(report: number[]): boolean {
 
 function hasSameSign(a: number, b: number): boolean {
   return (a >= 0 && b >= 0) || (a <= 0 && b <= 0);
+}
+
+export function canMakeReportSafe(report: number[]): boolean {
+  let i = 0;
+  let hasSafeVersion = false;
+
+  while (!hasSafeVersion && i < report.length) {
+    const reportCopy = [...report];
+    reportCopy.splice(i, 1);
+
+    hasSafeVersion = isSafeReport(reportCopy);
+
+    i += 1;
+  }
+  return hasSafeVersion;
 }
 
 main();
